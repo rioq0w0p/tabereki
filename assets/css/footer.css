@@ -1,0 +1,98 @@
+.footer-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px 60px;
+    background-color: white;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-2__logo {
+    width: 150px;
+    height: auto;
+}
+
+.footer-2__list {
+    display: flex;
+    align-items: center;
+    gap: 0 1.5em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    order: 1;
+}
+
+.footer-2__sns-icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+/* SNSアイコンのホバーエフェクト */
+.footer-2__sns-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 各SNSの特徴的な色 */
+.footer-2__sns-icon--twitter:hover path {
+    fill: #1DA1F2;
+}
+
+.footer-2__sns-icon--facebook:hover path {
+    fill: #1877F2;
+}
+
+.footer-2__sns-icon--instagram:hover path {
+    fill: #E4405F;
+}
+
+.footer-2__copyright {
+    margin: 0;
+    color: black;
+    font-weight: 300;
+    font-size: 0.9em;
+    order: 0;
+}
+
+.footer-2__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+}
+
+/* フッターのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .footer-2 {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-2__right {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .footer-2__list {
+        justify-content: center;
+        order: 0;
+    }
+
+    .footer-2__copyright {
+        order: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-2__copyright {
+        font-size: 0.8em;
+    }
+
+    .footer-2__sns-icon {
+        width: 20px;
+        height: 20px;
+    }
+}

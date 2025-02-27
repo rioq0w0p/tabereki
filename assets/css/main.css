@@ -1,0 +1,440 @@
+.main__container {
+    width: 100%;
+    height: calc(100vh - 20px);  /* ヘッダーとの余白を考慮して調整 */
+    display: flex;
+    justify-content: center;  /* 水平方向の中央揃え */
+    align-items: center;      /* 垂直方向の中央揃え */
+    padding: 20px;
+}
+
+#carouselExampleCaptions {
+    width: 100%;
+    height: 700px;          /* 高さを固定 */
+    max-width: 1500px;       /* 最大幅を設定（必要に応じて調整） */
+    margin: 0 auto;          /* 中央揃え */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);  /* 枠の周りに軽いシャドウを追加 */
+    border-radius: 8px;      /* 角を少し丸く */
+    overflow: hidden;        /* 画像の角も丸くなるように */
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;          /* 親要素の高さいっぱいに */
+}
+
+.carousel-item {
+    height: 100%;         /* 親要素の高さいっぱいに */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;         /* 親要素の高さいっぱいに */
+    object-fit: cover;    /* アスペクト比を保ちながら枠内に収める */
+}
+
+main {
+    margin-top: 20px;  /* 80pxから20pxに減らす */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carousel_text{
+    font-weight: bold;
+}
+
+#category {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#category img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.main__img {
+    width: 300px;
+    margin: 0 auto 30px;
+    display: block;
+}
+
+.about__text__container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+}
+
+.about__text__japanese,
+.about__text__english {
+    flex: 1;
+    max-width: 500px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about__text__japanese p,
+.about__text__english p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about__text__japanese .highlight,
+.about__text__english .highlight {
+    font-weight: 700;
+    color: #333;
+}
+
+.category__container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    flex: 0 0 25%;  /* 4つのカードを1行に */
+    max-width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.card-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    will-change: transform;  /* GPU加速を有効化 */
+    transform: translateZ(0);  /* GPU加速を強制 */
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px) translateZ(0);  /* GPU加速を維持 */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    will-change: transform;  /* GPU加速を有効化 */
+    transform: translateZ(0);  /* GPU加速を強制 */
+}
+
+.card-body {
+    padding: 0.5rem 1.5rem 1.5rem;  /* 上のパディングを0.5remに減らし、左右1.5rem、下1.5remを維持 */
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+    .col {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.map {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 地図関連のスタイル */
+.places__text {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.region-link {
+    position: absolute;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 3px double;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    will-change: transform;  /* GPU加速を有効化 */
+    transform: translateZ(0);  /* GPU加速を強制 */
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* 各地域の色設定 */
+.hokkaido {
+    top: 8.5%;
+    left: 81.3%;
+    color: rgb(51,102,203) ;  /* 青 */
+    border-color: rgb(51,102,203) ;
+}
+
+.tohoku {
+    top: 36%;
+    left: 78.3%;
+    color: rgb(0,152,203);  /* 水色 */
+    border-color: rgb(0,152,203);
+}
+
+.kanto {
+    top: 65%;
+    left: 78.5%;
+    color: rgb(35,136,88);  /* 濃い緑 */
+    border-color: rgb(35,136,88);
+}
+
+.chubu {
+    top: 63%;
+    left: 60%;
+    color: rgb(135,180,0);  /* 黄緑 */
+    border-color: rgb(135,180,0);
+}
+
+.kinki {
+    top: 70%;
+    left: 43%;
+    color: rgb(252,128,17);  /* オレンジ */
+    border-color: rgb(252,128,17);
+}
+
+.chugoku {
+    top: 61%;
+    left: 22%;
+    color: rgb(203,102,0);  /* 茶色 */
+    border-color: rgb(203,102,0);
+}
+
+.shikoku {
+    top: 76.5%;
+    left: 23.1%;
+    color: rgb(254,102,152);  /* ピンク */
+    border-color: rgb(254,102,152);
+}
+
+.kyushu {
+    top: 68%;
+    left: 4.7%;
+    color: rgb(203,51,102);  /* 赤 */
+    border-color: rgb(203,51,102);
+}
+
+.world {
+    top: 10.5%;
+    left: 14%;
+    color: rgb(0, 122, 204);  /* 赤 */
+    border-color: rgb(0, 122, 204);
+}
+
+.region-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;  /* ホバー時に少し透明に */
+    color: inherit;  /* 元の色を維持 */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .region-link {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .region-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* スマホサイズでの地方名位置調整 */
+    .hokkaido { left: 76.1%; }
+    .tohoku { left: 74.2%; }
+    .kanto { top: 63%; left: 74.5%; }
+    .chubu { top: 55%; left: 56.5%; }
+    .kinki { top: 68%; left: 41.3%; }
+    .chugoku { top: 58.5%; left: 20.2%; }
+    .shikoku { top: 73.2%; left: 21.5%; }
+    .kyushu { top: 62%; left: 4%; }
+    .world { top: 10.5%; left: 13%; }
+}
+
+/* Aboutセクションのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .about__text__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about__text__japanese,
+    .about__text__english {
+        max-width: 100%;
+    }
+}
+
+/* メインビジュアルのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .main__container {
+        height: calc(70vh - 20px);  /* タブレットサイズでの高さ調整 */
+        padding: 10px;
+    }
+
+    #carouselExampleCaptions {
+        height: 500px;  /* タブレットサイズでの高さ調整 */
+    }
+}
+
+@media (max-width: 576px) {
+    .main__container {
+        height: calc(50vh - 20px);  /* スマートフォンサイズでの高さ調整 */
+        padding: 5px;
+    }
+
+    #carouselExampleCaptions {
+        height: 300px;  /* スマートフォンサイズでの高さ調整 */
+        border-radius: 4px;  /* 角丸を少し小さく */
+    }
+
+    .carousel-caption {
+        padding: 10px;  /* キャプションのパディングを調整 */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem;  /* タイトルのフォントサイズを調整 */
+    }
+
+    .carousel-caption p {
+        font-size: 0.8rem;  /* 説明文のフォントサイズを調整 */
+    }
+}
+
+/* 言語選択プルダウンのスタイル */
+.language-selector {
+    display: none;  /* デフォルトでは非表示 */
+    text-align: center;
+    margin: 20px auto;
+    max-width: 300px;  /* 幅を広げる */
+}
+
+.language-selector__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;  /* 要素間の間隔 */
+}
+
+.language-label {
+    margin: 0;  /* マージンをリセット */
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    white-space: nowrap;  /* 文字の折り返しを防ぐ */
+}
+
+.language-selector select {
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 150px;  /* セレクトボックスの幅を固定 */
+}
+
+.language-selector select:hover {
+    background-color: #f5f5f5;
+}
+
+.language-selector select:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* スマートフォンサイズでの表示切り替え */
+@media (max-width: 576px) {
+    .language-selector {
+        display: block;  /* スマートフォンサイズで表示 */
+    }
+
+    .about__text__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* 言語選択時のデフォルト表示設定 */
+    .about__text__english {
+        display: none;
+    }
+}
+

@@ -1,0 +1,113 @@
+.c-form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.c-form__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 20px;
+}
+.c-form__label,
+.c-form__input {
+	padding: 10px;
+}
+.c-form__label {
+	width: 90%;
+}
+.c-form__input {
+	width: 90%;
+	font-size: 16px;
+	border: solid 1px #333;
+	border-radius: 4px;
+}
+.c-form__input:focus-visible {
+	outline: lightblue auto 1px;
+}
+.c-form__required {
+	color: #fff;
+	background-color: lightblue;
+	border-radius: 4px;
+	padding: 5px 5px;
+	margin: 0 0 0 18px;
+}
+textarea.c-form__input {
+	height: 160px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background-color: lightblue;
+	border: solid 1px lightblue;
+	border-radius: 4px;
+	padding: 5px 32px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.c-form__submit button:hover {
+	color: lightblue;
+	background-color: transparent;
+}
+
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+	.c-form__input {
+		width: 55%;
+	}
+}
+
+/* Thanks page styles */
+.thanks-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+.thanks-title {
+	font-size: 28px;
+	color: #333;
+	margin-bottom: 30px;
+}
+
+.thanks-message {
+	font-size: 16px;
+	line-height: 1.8;
+	color: #666;
+	margin-bottom: 40px;
+}
+
+.thanks-image {
+	margin: 30px 0;
+}
+
+.thanks-image img {
+	max-width: 300px;
+	height: auto;
+}
+
+.return-btn {
+	display: inline-block;
+	padding: 12px 40px;
+	background-color: lightblue;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 30px;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+	background-color: #fff;
+	color: lightblue;
+	border: 2px solid lightblue;
+	text-decoration: none;
+}

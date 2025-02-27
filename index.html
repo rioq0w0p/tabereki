@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/header.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <title>たべれき-Tabereki｜Food Diary</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/icon_48x48.png">
+    
+    <link rel="preload" as="image" href="./assets/img/icon.png">
+    <link rel="preload" as="image" href="./assets/img/IMG_7424.jpeg">
+    <link rel="preload" as="image" href="./assets/img/IMG_7118.jpeg">
+    <link rel="preload" as="image" href="./assets/img/IMG_7216.jpeg">
+    <link rel="preload" as="image" href="./assets/img/about.png">
+    <link rel="preload" as="image" href="./assets/img/place.png">
+    <link rel="preload" as="image" href="./assets/img/map-japan.png">
+    <link rel="preload" as="image" href="./assets/img/category.png">
+    <link rel="preload" as="image" href="./assets/img/ramen.jpeg">
+    <link rel="preload" as="image" href="./assets/img/udon.jpeg">
+    <link rel="preload" as="image" href="./assets/img/soba.jpeg">
+    <link rel="preload" as="image" href="./assets/img/sweet.jpeg">
+    <link rel="preload" as="image" href="./assets/img/japanese.jpeg">
+    <link rel="preload" as="image" href="./assets/img/italian.jpeg">
+    <link rel="preload" as="image" href="./assets/img/china.jpeg">
+    <link rel="preload" as="image" href="./assets/img/other.jpeg">
+</head>
+
+<body id="top">
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__logo">
+                <a href="/">
+                    <img src="./assets/img/icon.png" alt="logo" width="100px">
+                    <span style="font-weight: bold; margin-left: 10px;">たべれき-Tabereki｜Food Diary</span>
+                </a>
+            </h1>
+            <div class="header__links">
+                <a href="#top" class="header__link">TOP</a>
+                <a href="#about" class="header__link">ABOUT</a>
+                <a href="#places" class="header__link">PLACE</a>
+                <a href="#category" class="header__link">CATEGORY</a>
+            </div>
+            <button type="button" class="hamburger">
+            <span></span>
+            </button>
+            <nav class="nav" style="display: none;">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="./alert.html">Home</a></li>
+                <li class="nav__item"><a href="./alert.html">Profile</a></li>
+                <li class="nav__item"><a href="/">Tabereki</a></li>
+                <li class="nav__item"><a href="./pages/contact/contact.html">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+        </header>
+        <script src="./assets/JS/humberger.js"></script>
+
+    
+    <main>
+        <div class="main__container">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="./alert.html">
+                    <img src="./assets/img/IMG_7424.jpeg" class="d-block w-100" alt="img1">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="carousel_text">麺場 浜虎</h5>
+                      <p>つけそば</p>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./alert.html">
+                    <img src="./assets/img/IMG_7118.jpeg" class="d-block w-100" alt="img2">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="carousel_text">炭焼きレストラン さわやか 沼津学園通り店</h5>
+                      <p>げんこつハンバーグ オニオン&デミグラスソース</p>
+                    </div>
+                    </a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href="./alert.html">
+                    <img src="./assets/img/IMG_7216.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="carousel_text">博多もつ鍋 おおやま 横浜店</h5>
+                      <p>もつ鍋</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+        </div>
+
+        <div id="about" name="about">
+            <img src="./assets/img/about.png" alt="about" class="main__img">
+            
+            <!-- 言語選択部分を横並びに -->
+            <div class="language-selector">
+                <div class="language-selector__inner">
+                    <p class="language-label">言語 / Language</p>
+                    <select id="languageSelect">
+                        <option value="ja">日本語</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="about__text__container">
+                <div class="about__text__japanese" id="jaText">
+                    <p>　<span class="highlight">『たべれき』</span>は、筆者が実際に訪れた美味しいお店の情報を写真と共にまとめたグルメ記録サイトです。</p>
+                    <p>　地元の穴場スポットから旅先で出会った素敵なお店まで、実際に体験した食事の写真、感想、アクセス情報、店舗の雰囲気などを詳しく掲載しています。</p>
+                    <p>　個人目線のリアルなレビューやおすすめポイントを通じて、<span class="highlight">訪問したいお店</span>がきっと見つかります。</p>
+                    <p>　日常の食事を<span class="highlight">ちょっと特別な思い出</span>に変えるためのヒントが満載。あなたの次のお出かけや食べ歩きに役立つ情報をぜひ見つけてください！</p>
+                </div>
+                <div class="about__text__english" id="enText" style="display: none;">
+                    <p> "<span class="highlight">Tabereki</span>" is a gourmet diary website featuring detailed information and photos from restaurants I've personally visited.</p>
+                    <p> From hidden local gems to charming spots discovered while traveling, the site provides detailed insights including meal photos, reviews, access information, and the ambiance of each restaurant.</p>
+                    <p> Through personal, authentic reviews and highlights, you're sure to discover <span class="highlight">restaurants you'd love to visit</span>.</p>
+                    <p> Filled with tips to make everyday meals into <span class="highlight">special memories</span>, this site is your guide to finding great spots for your next outing or foodie adventure!</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="places" name="places">
+            <img src="./assets/img/place.png" alt="places" class="main__img">
+            <div class="places__text">
+                <img src="./assets/img/map-japan.png" alt="map" class="map">
+                <a href="./alert.html" class="region-link world">World</a>
+                <a href="./alert.html" class="region-link hokkaido">北海道</a>
+                <a href="./alert.html" class="region-link tohoku">東北</a>
+                <a href="./alert.html" class="region-link kanto">関東</a>
+                <a href="./alert.html" class="region-link chubu">中部</a>
+                <a href="./alert.html" class="region-link kinki">近畿</a>
+                <a href="./alert.html" class="region-link chugoku">中国</a>
+                <a href="./alert.html" class="region-link shikoku">四国</a>
+                <a href="./alert.html" class="region-link kyushu">九州<br>・<br>沖縄</a>
+            </div>
+        </div>
+
+        <div id="category" name="category">
+          <img src="./assets/img/category.png" alt="category" class="main__img">
+          <div class="category__container">
+            <div class="row row-cols-1 row-cols-md-4">
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/ramen.jpeg" class="card-img-top" alt="ramen">
+                    <div class="card-body">
+                      <h5 class="card-title">ラーメン - Ramen</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/udon.jpeg" class="card-img-top" alt="udon">
+                    <div class="card-body">
+                      <h5 class="card-title">うどん - Udon</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/soba.jpeg" class="card-img-top" alt="other noodles">
+                    <div class="card-body">
+                      <h5 class="card-title">他の麺類 - Other Noodles</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/sweet.jpeg" class="card-img-top" alt="sweet">
+                    <div class="card-body">
+                      <h5 class="card-title">デザート - Dessert</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/japanese.jpeg" class="card-img-top" alt="japanese">
+                    <div class="card-body">
+                      <h5 class="card-title">和食 - Japanese</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/italian.jpeg" class="card-img-top" alt="italian">
+                    <div class="card-body">
+                      <h5 class="card-title">洋食 - Western</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/china.jpeg" class="card-img-top" alt="chinese">
+                    <div class="card-body">
+                      <h5 class="card-title">中華料理 - Chinese</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col mb-4">
+                <a href="./alert.html" class="card-link">
+                  <div class="card h-100">
+                    <img src="./assets/img/other.jpeg" class="card-img-top" alt="other">
+                    <div class="card-body">
+                      <h5 class="card-title">その他 - Other</h5>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </main>
+
+
+    <footer class="footer-2">
+        <a href="#">
+            <img src="./assets/img/icon.png" alt="logo" width="100px">
+        </a>
+        <div class="footer-2__right">
+            <nav>
+                <ul class="footer-2__list">
+                    <li>
+                        <a href="./alert.html">
+                            <svg class="footer-2__sns-icon footer-2__sns-icon--twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="black" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/share/1Az4RT5Xry/?mibextid=wwXIfr">
+                            <svg class="footer-2__sns-icon footer-2__sns-icon--facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="black" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/takuq0w0p/">
+                            <svg class="footer-2__sns-icon footer-2__sns-icon--instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path fill="black" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="footer-2__copyright">@ 2025 Takuma_Oriishi All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./assets/JS/main.js"></script>
+</body>
+</html>
