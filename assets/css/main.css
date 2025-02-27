@@ -161,6 +161,7 @@ main {
     transform: translateZ(0);  /* GPU加速を強制 */
 }
 
+
 .card-body {
     padding: 0.5rem 1.5rem 1.5rem;  /* 上のパディングを0.5remに減らし、左右1.5rem、下1.5remを維持 */
     text-align: center;
