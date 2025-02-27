@@ -1,47 +1,56 @@
 main{
     margin-top: 100px;
 }
-.region-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
 
-.region-container__title {
+.category-container__title {
     display: flex;
-    gap: 30px;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.region-container__title-image {
-    flex: 0 0 50%;
+.category-container__title-image {
+    flex: 0 0 100%;
+    order: 1;
 }
 
-.region-container__title-image img {
+.category-container__title-image img {
     width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.region-container__title-text {
-    flex: 0 0 50%;
-}
-
-.region-container__title-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #333;
-    font-weight: bold;
+.category-container__title-text {
+    flex: 0 0 100%;
+    order: 2;
     text-align: center;
 }
 
-.region-container__title-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 15px;
+@media (min-width: 769px) {
+    .category-container__title {
+        flex-direction: row;
+    }
+    
+    .category-container__title-image {
+        flex: 0 0 40%;
+        order: 2;
+    }
+    
+    .category-container__title-text {
+        flex: 0 0 60%;
+        order: 1;
+    }
+}
+
+.category-container__title-text-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .introduce__container {
@@ -115,18 +124,30 @@ main{
 }
 
 @media (max-width: 768px) {
-    .region-container__title {
+    .category-container__title {
         flex-direction: column;
+        padding: 1rem;
     }
 
-    .region-container__title-image,
-    .region-container__title-text {
+    .category-container__title-image,
+    .category-container__title-text {
         flex: 0 0 100%;
+        max-width: 100%;
     }
 
-    .region-container__title-text h2 {
+    .category-container__title-image {
+        margin-bottom: 1.5rem;
+    }
+
+    .category-container__title-text-title {
         font-size: 2rem;
         text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .category-container__title-text p {
+        text-align: left;
+        margin-bottom: 1rem;
     }
 
     .row-cols-md-6 > * {
