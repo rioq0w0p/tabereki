@@ -1,0 +1,56 @@
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 248, 235, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease-out;
+}
+
+/* フェードアウト時 */
+#loading-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ローディングアイコン */
+.loader {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.fork-spoon {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); /* フォークとスプーンのアイコン */
+    background-size: cover;
+    animation: rotate 1.5s linear infinite;
+}
+
+/* テキストスタイル */
+.loading-text {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #d2691e;
+}
+
+/* アイコン回転アニメーション */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* メインコンテンツの表示制御 */
+body > *:not(#loading-screen):not(script) {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+body.loaded > *:not(#loading-screen):not(script) {
+    opacity: 1;
+}
