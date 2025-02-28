@@ -1,15 +1,12 @@
-$(document).ready(function() {
-    // クリックイベントのみ残す（必要な場合）
-    $('.card').click(function() {
-        $(this).css({
-            'transform': 'scale(0.95)',
-            'transition': 'transform 0.1s'
+// カードのクリックアニメーション
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.add('card--active');
+            setTimeout(() => {
+                this.classList.remove('card--active');
+            }, 100);
         });
-        setTimeout(() => {
-            $(this).css({
-                'transform': 'scale(1)'
-            });
-        }, 100);
     });
 });
 
@@ -36,29 +33,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const jaText = document.getElementById('jaText');
     const enText = document.getElementById('enText');
 
-    // 画面サイズに応じた表示制御
-    function handleLanguageDisplay() {
-        if (window.innerWidth <= 576) {  // スマートフォンサイズ
-            // 言語選択の値に応じて表示を切り替え
-            if (languageSelect.value === 'ja') {
-                jaText.style.display = 'block';
-                enText.style.display = 'none';
-            } else {
-                jaText.style.display = 'none';
-                enText.style.display = 'block';
-            }
-        } else {
-            // スマートフォンサイズ以外では両方表示
-            jaText.style.display = 'block';
-            enText.style.display = 'block';
-        }
+    // デバウンス関数
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), wait);
+        };
     }
+
+    // 画面サイズに応じた表示制御
+    const handleLanguageDisplay = () => {
+        const isMobile = window.innerWidth <= 576;
+        const isJapanese = languageSelect.value === 'ja';
+        
+        jaText.style.display = isMobile ? (isJapanese ? 'block' : 'none') : 'block';
+        enText.style.display = isMobile ? (isJapanese ? 'none' : 'block') : 'block';
+    };
 
     // 言語選択が変更されたときの処理
     languageSelect.addEventListener('change', handleLanguageDisplay);
 
-    // 画面サイズが変更されたときの処理
-    window.addEventListener('resize', handleLanguageDisplay);
+    // 画面サイズが変更されたときの処理（デバウンス処理付き）
+    window.addEventListener('resize', debounce(handleLanguageDisplay, 150));
 
     // 初期表示時の処理
     handleLanguageDisplay();

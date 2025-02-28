@@ -2,19 +2,22 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 248, 235, 0.95);
+    background-color: rgb(255, 248, 235);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    transition: opacity 1s ease-out;
+    transition: all 1s ease-out;
+    top: 0;
+    left: 0;
 }
 
 /* フェードアウト時 */
 #loading-screen.fade-out {
     opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 
 /* ローディングアイコン */
@@ -27,7 +30,7 @@
 .fork-spoon {
     width: 100%;
     height: 100%;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'); /* フォークとスプーンのアイコン */
+    background-image: url('../img/load.png'); /* フォークとスプーンのアイコン */
     background-size: cover;
     animation: rotate 1.5s linear infinite;
 }
