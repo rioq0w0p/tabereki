@@ -1,5 +1,6 @@
 /* ヘッダースタイリング */
 .header {
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
     height: 80px;
     background-color: rgba(255 , 255 , 255);
     position: fixed;
@@ -205,3 +206,41 @@
     }
 }
 
+.pan__container{
+  margin-left: 10%;
+}
+
+.breadcrumb-002 {
+  display: flex;
+  gap: 0 15px;
+  list-style: none;
+  padding: 0;
+  font-size: .9em;
+}
+
+.breadcrumb-002 li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-002 li:first-child::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM11 13V19H13V13H11Z' fill='%23333333'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: '';
+}
+
+.breadcrumb-002 li:not(:last-child)::after {
+  display: inline-block;
+  margin-left: 15px;
+  color: #333333;
+  content: '/';
+}
+
+.breadcrumb-002 a {
+  color: #333333;
+  text-decoration: none;
+}

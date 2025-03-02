@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="../../assets/css/footer.css">
     <link rel="stylesheet" href="../../assets/css/button.css">
-
+    <link rel="stylesheet" href="./assets/css/pages.css">
     <title>たべれき-Tabereki｜Food Diary</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon_48x48.png">
+
 </head>
 <body>
     <header class="header">
@@ -21,16 +23,14 @@
                     <span style="font-weight: bold; margin-left: 10px;">たべれき-Tabereki｜Food Diary</span>
                 </a>
             </h1>
-            <div class="header__links">
-                <a href="../../index.html" class="header__link">TOP</a>
-            </div>
+            
             <button type="button" class="hamburger">
             <span></span>
             </button>
             <nav class="nav" style="display: none;">
             <ul class="nav__list">
-                <li class="nav__item"><a href="../.../../alert.html">Home</a></li>
-                <li class="nav__item"><a href="../.../../alert.html">Profile</a></li>
+                <li class="nav__item"><a href="../../alert.html">Home</a></li>
+                <li class="nav__item"><a href="../../alert.html">Profile</a></li>
                 <li class="nav__item"><a href="../../index.html">Tabereki</a></li>
                 <li class="nav__item"><a href="../contact/contact.html">Contact</a></li>
             </ul>
@@ -40,15 +40,21 @@
     </header>
 
     <main>
+        <div class="pan__container">
+            <ol class="breadcrumb-002">
+                <!-- パンくずリストはJavaScriptで動的に生成されます -->
+            </ol>
+        </div>
+
         <div class="category-container">
             <div class="category-container__title">
                 <div class="category-container__title-text">
-                    <h2 class="category-container__title-text-title">麺場 浜虎</h2>
-                        <p>　中華料理は、中華料理です。</p>
-                        <p>　ラーメンは、中華料理の一種で、麺とスープを合わせた料理です。麺は中華麺が一般的で、スープは豚骨スープが主流です。</p>
+                    <h2 class="category-container__title-text-title">テンプレート</h2>
+                        <p>　Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, fugiat reiciendis beatae repudiandae excepturi natus maxime repellendus, saepe recusandae deleniti velit sapiente neque. Excepturi ullam rem, ad consectetur corrupti saepe.</p>
+                        <p>　Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem deserunt pariatur voluptates, veniam est non saepe iusto quaerat ducimus delectus molestiae repudiandae, suscipit consectetur quisquam esse cum iure minus sequi.</p>
                 </div>
                 <div class="category-container__title-image">
-                    <img src="../../assets/img/noimage.png" alt="麺場 浜虎">
+                    <img src="../../assets/img/noimage.png" alt="template">
                 </div>
             </div>
         </div>
@@ -71,7 +77,7 @@
                 <nav>
                     <ul class="footer-2__list">
                         <li>
-                            <a href="../.../../alert.html">
+                            <a href="../../alert.html">
                                 <svg class="footer-2__sns-icon footer-2__sns-icon--twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path fill="black" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
@@ -96,11 +102,12 @@
                 <p class="footer-2__copyright">@ 2025 Takuma_Oriishi All rights reserved.</p>
             </div>
     </footer>
-    
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="./assets/JS/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./assets/JS/main.js"></script>
+    <script src="../assets/js/breadcrumb.js"></script>
+
     
 </body>
 </html>

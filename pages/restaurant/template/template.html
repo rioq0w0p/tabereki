@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../../assets/css/header.css">
+    <link rel="stylesheet" href="../../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../../assets/css/button.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <title>たべれき-Tabereki｜Food Diary</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/img/icon_48x48.png">
+
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__logo">
+                <a href="../../../index.html">
+                    <img src="../../../assets/img/icon.png" alt="logo" width="100px">
+                    <span style="font-weight: bold; margin-left: 10px;">たべれき-Tabereki｜Food Diary</span>
+                </a>
+            </h1>
+            <button type="button" class="hamburger">
+            <span></span>
+            </button>
+            <nav class="nav" style="display: none;">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="../../../alert.html">Home</a></li>
+                <li class="nav__item"><a href="../../../alert.html">Profile</a></li>
+                <li class="nav__item"><a href="../../../index.html">Tabereki</a></li>
+                <li class="nav__item"><a href="../../contact/contact.html">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+        <script src="../../../assets/JS/humberger.js"></script>
+    </header>
+
+    <main>
+        <div class="pan__container">
+            <ol class="breadcrumb-002">
+                <!-- パンくずリストはJavaScriptで動的に生成されます -->
+            </ol>
+        </div>
+
+        <div class="restaurant-container">
+            <div class="restaurant-container__title">
+                <p class="restaurant-container__title-text-1">てんぷれーと</p>
+                <p class="restaurant-container__title-text-2">テンプレート</p>
+                <p class="restaurant-container__title-text-3">
+                　Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum aliquam enim officia cum voluptates error a.
+                </p>
+            </div>
+
+            <div class="restaurant-container__content">
+                <div class="restaurant-container__images">
+                    <div class="restaurant-container__shop-photos">
+                        <div class="shop-photos__main">
+                            <div class="image-container">
+                                <img src="../../../assets/img/noimage.png" alt="noimage" id="mainImage">
+                                <div class="shop-photos__text" id="imageCaption">noimage</div>
+                            </div>
+                        </div>
+                        <div class="thumbnails-wrapper">
+                            <div class="shop-photos__thumbnails">
+                            <button class="nav-button prev" onclick="navigateImage('prev')">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="#2F8DA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="thumbnails-container">
+                                <div class="shop-photos__thumbnail active">
+                                    <img src="../../../assets/img/IMG_7118.webp" alt="サムネイル1" data-caption="お店の外観" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/IMG_7216.webp" alt="サムネイル2" data-caption="店内カウンター席" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/udon.webp" alt="サムネイル3" data-caption="うどん定食" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/ramen.webp" alt="サムネイル4" data-caption="特製ラーメン" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/japanese.webp" alt="サムネイル5" data-caption="和食セット" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/china.webp" alt="サムネイル6" data-caption="中華セット" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/other.webp" alt="サムネイル7" data-caption="その他" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                                <div class="shop-photos__thumbnail">
+                                    <img src="../../../assets/img/soba.webp" alt="サムネイル8" data-caption="そば" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                </div>
+                            </div>
+                            <button class="nav-button next" onclick="navigateImage('next')">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="#2F8DA2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="restaurant-container__text">
+                <div class="restaurant-container__text-main">
+                    <p>　Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ratione reprehenderit explicabo quidem laboriosam totam alias commodi libero iure, consequatur sint, praesentium fugiat deserunt, veritatis fugit at. Earum, inventore facere!</p>
+                </div>
+            </div>
+
+            <div class="recomend__container">
+                <div class="title">
+                    <span class="bar"></span>
+                    <h1>一押しメニュー！</h1>
+                </div>
+                <div class="recomend__container__text">
+                    <div class="recomend__container__text__title">
+                        <p class="recomend__container__text__name">
+                            おすすめメニュー
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore sequi nobis architecto ipsum ratione voluptate nisi! Dicta rerum vitae tenetur in dolorem saepe quia cupiditate reprehenderit, enim necessitatibus amet voluptatibus.
+                        </p>
+                    </div>
+                    <img src="../../../assets/img/IMG_7118.webp" alt="サムネイル1" class="recomend__container__text__image">
+                </div>
+            </div>
+
+            <div class="shop-details">
+                <div class="title">
+                    <span class="bar"></span>
+                    <h1>店舗詳細</h1>
+                </div>
+                <div class="shop-details__grid">
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="currentColor"/>
+                            </svg>
+                            <span>住所</span>
+                        </div>
+                        <p>〒289-2241　千葉県香取郡多古町多古3893-1</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" fill="currentColor"/>
+                            </svg>
+                            <span>電話番号</span>
+                        </div>
+                        <p>0479-85-6138（みんなのらぁめんBAMBU）</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="currentColor"/>
+                            </svg>
+                            <span>営業時間</span>
+                        </div>
+                        <p>11:30～14:00（ラストオーダー13:30)<br>18:00～21:00（ラストオーダー20:00）</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z" fill="currentColor"/>
+                            </svg>
+                            <span>定休日</span>
+                        </div>
+                        <p>月曜日・不定休</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-5h14v5z" fill="currentColor"/>
+                            </svg>
+                            <span>アクセス（車）</span>
+                        </div>
+                        <p>新空港自動車道「新空港IC」から車で約15分</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.2L7 18V5h10v13z" fill="currentColor"/>
+                                <text x="8.5" y="14" fill="currentColor" font-size="9" font-weight="bold">P</text>
+                            </svg>
+                            <span>駐車場</span>
+                        </div>
+                        <p>15台（無料）</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20v1h12v-1l-1.5-1c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zm0 2c3.71 0 5.13.46 5.67 1H6.43c.6-.52 2.05-1 5.57-1zM6 7h5v3H6V7zm12 0v3h-5V7h5zm-6 5h2v2h-2v-2zm-4 0h2v2H8v-2zm8 0h2v2h-2v-2z" fill="currentColor"/>
+                            </svg>
+                            <span>アクセス（公共交通機関）</span>
+                        </div>
+                        <p>JR成田線 芝山千代田駅からタクシーで10分</p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z" fill="currentColor"/>
+                            </svg>
+                            <span>Webサイト</span>
+                        </div>
+                        <p><a href="#" style="color: #2F8DA2; text-decoration: underline;">公式サイトはこちら</a></p>
+                    </div>
+                    <div class="shop-details__item">
+                        <div class="shop-details__label">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" fill="currentColor"/>
+                            </svg>
+                            <span>その他</span>
+                        </div>
+                        <p>無料Wi-Fi完備<br>キャッシュレス対応（PayPay、クレジットカード）</p>
+                    </div>
+                </div>
+                <div class="shop-details__map">
+                    <div class="shop-details__map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3291.771598040231!2d139.76447411136607!3d35.68203905533971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e1!3m2!1sja!2sph!4v1740934872594!5m2!1sja!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="back-button-container">
+        <button type="button" onclick="history.back()" class="back-button">
+            <span>前に戻る</span>
+        </button>
+
+        <script src="../../../assets/JS/backbotton.js"></script>
+    </div>
+
+    <footer class="footer-2">
+            <a href="../../../index.html">
+                <img src="../../../assets/img/icon.png" alt="logo" width="100px">
+            </a>
+            <div class="footer-2__right">
+                <nav>
+                    <ul class="footer-2__list">
+                        <li>
+                            <a href="../../../alert.html">
+                                <svg class="footer-2__sns-icon footer-2__sns-icon--twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="black" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/share/1Az4RT5Xry/?mibextid=wwXIfr">
+                                <svg class="footer-2__sns-icon footer-2__sns-icon--facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="black" d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/takuq0w0p/">
+                                <svg class="footer-2__sns-icon footer-2__sns-icon--instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path fill="black" d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="footer-2__copyright">@ 2025 Takuma_Oriishi All rights reserved.</p>
+            </div>
+    </footer>
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="../assets/js/breadcrumb.js"></script>
+        <script src="../assets/js/gallery.js"></script>
+</body>
+</html>
