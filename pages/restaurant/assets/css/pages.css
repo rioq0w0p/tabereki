@@ -113,24 +113,26 @@ main{
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 12px;
+    gap: clamp(8px, 2vw, 12px);
     scrollbar-width: thin;
     scrollbar-color: #2F8DA2 #ffffff;
     padding: 0 20px;
 }
 
 .thumbnails-container::-webkit-scrollbar {
-    height: 6px;
+    height: clamp(4px, 1vw, 6px);
 }
 
 .thumbnails-container::-webkit-scrollbar-track {
     background: #ffffff;
     border-radius: 3px;
+    margin: 0 10px;
 }
 
 .thumbnails-container::-webkit-scrollbar-thumb {
     background-color: #2F8DA2;
     border-radius: 3px;
+    border: 2px solid #ffffff;
 }
 
 .shop-photos__thumbnail {
@@ -140,6 +142,12 @@ main{
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.2s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .shop-photos__thumbnail {
+        height: 80px;
+    }
 }
 
 .shop-photos__thumbnail:hover {
@@ -254,20 +262,39 @@ main{
 
 .recomend__container__text{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .recomend__container__text {
+        flex-direction: column-reverse;
+    }
+    
+    .recomend__container__text__title {
+        width: 100%;
+    }
 }
 
 .recomend__container__text img{
-    width: 30%;
+    width: clamp(200px, 30%, 300px);
     height: auto;
     border-radius: 8px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .recomend__container__text img {
+        width: 100%;
+        max-width: none;
+    }
 }
 
 .recomend__container__text__name{
-    font-size: clamp(2px, 4vw, 32px);
+    font-size: clamp(20px, 4vw, 32px);
     font-weight: 700;
     color: #333;
-    margin-left: 15px;
+    margin-bottom: 15px;
 }
 
 .shop-details {
