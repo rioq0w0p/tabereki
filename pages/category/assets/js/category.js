@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     restaurantContainer.insertAdjacentElement("beforebegin", prefectureSelect);
 
     // `stores.json` のパスを動的に設定
-    const jsonPath = window.location.pathname.includes("/category/") ? "../../../../assets/json/stores.json" : "stores.json";
+    const jsonPath = window.location.pathname.includes("/category/") ? "../../../assets/json/stores.json" : "stores.json";
 
+    console.log(jsonPath)
     try {
         const response = await fetch(jsonPath);
         const storePages = await response.json();
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     areaToPrefectures[area] = new Set();
                 }
                 areaToPrefectures[area].add(prefecture);
+                console.log(pagePath)
             } catch (error) {
                 console.error(`${page} の取得エラー:`, error);
             }
