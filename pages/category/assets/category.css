@@ -163,3 +163,23 @@ main{
         max-width: 100%;
     }
 }
+
+.form-control.my-3 {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin: 1rem auto;
+    transition: border-color 0.3s ease;
+    text-align: center;
+}
+
+.form-control.my-3:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}

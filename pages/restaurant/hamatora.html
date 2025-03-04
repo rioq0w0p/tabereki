@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../../assets/css/header.css">
-    <link rel="stylesheet" href="../../../assets/css/footer.css">
-    <link rel="stylesheet" href="../../../assets/css/button.css">
-    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
+    <link rel="stylesheet" href="../../assets/css/button.css">
+    <link rel="stylesheet" href="./assets/css/pages.css">
     <title>たべれき-Tabereki｜Food Diary</title>
-    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/img/icon_48x48.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/icon_48x48.png">
 
+    <!-- メタ情報 -->
+    <meta name="store-name" content="麵場 浜虎">
+    <meta name="store-tags" content="ラーメン">
+    <meta name="store-image" content="../../assets/img/sawayaka.webp">
+    <meta name="store-prefecture" content="神奈川県">
+    <meta name="store-area" content="関東">
+    
 </head>
 <body>
     <header class="header">
         <div class="header__container">
             <h1 class="header__logo">
-                <a href="../../../index.html">
-                    <img src="../../../assets/img/icon.png" alt="logo" width="100px">
+                <a href="../../index.html">
+                    <img src="../../assets/img/icon.png" alt="logo" width="100px">
                     <span style="font-weight: bold; margin-left: 10px;">たべれき-Tabereki｜Food Diary</span>
                 </a>
             </h1>
@@ -28,14 +35,14 @@
             </button>
             <nav class="nav" style="display: none;">
             <ul class="nav__list">
-                <li class="nav__item"><a href="../../../alert.html">Home</a></li>
-                <li class="nav__item"><a href="../../../alert.html">Profile</a></li>
-                <li class="nav__item"><a href="../../../index.html">Tabereki</a></li>
+                <li class="nav__item"><a href="../../alert.html">Home</a></li>
+                <li class="nav__item"><a href="../../alert.html">Profile</a></li>
+                <li class="nav__item"><a href="../../index.html">Tabereki</a></li>
                 <li class="nav__item"><a href="../../contact/contact.html">Contact</a></li>
             </ul>
             </nav>
         </div>
-        <script src="../../../assets/JS/humberger.js"></script>
+        <script src="../../assets/JS/humberger.js"></script>
     </header>
 
     <main>
@@ -59,7 +66,7 @@
                     <div class="restaurant-container__shop-photos">
                         <div class="shop-photos__main">
                             <div class="image-container">
-                                <img src="../../../assets/img/noimage.png" alt="noimage" id="mainImage">
+                                <img src="../../assets/img/noimage.png" alt="noimage" id="mainImage">
                                 <div class="shop-photos__text" id="imageCaption">noimage</div>
                             </div>
                         </div>
@@ -72,28 +79,28 @@
                             </button>
                             <div class="thumbnails-container">
                                 <div class="shop-photos__thumbnail active">
-                                    <img src="../../../assets/img/sawayaka.webp" alt="サムネイル1" data-caption="お店の外観" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/sawayaka.webp" alt="サムネイル1" data-caption="お店の外観" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/motsu_ooyama1.webp" alt="サムネイル2" data-caption="店内カウンター席" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/motsu_ooyama1.webp" alt="サムネイル2" data-caption="店内カウンター席" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/udon.webp" alt="サムネイル3" data-caption="うどん定食" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/udon.webp" alt="サムネイル3" data-caption="うどん定食" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/hamatora2.webp" alt="サムネイル4" data-caption="特製ラーメン" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/hamatora2.webp" alt="サムネイル4" data-caption="特製ラーメン" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/japanese.webp" alt="サムネイル5" data-caption="和食セット" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/japanese.webp" alt="サムネイル5" data-caption="和食セット" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/china.webp" alt="サムネイル6" data-caption="中華セット" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/china.webp" alt="サムネイル6" data-caption="中華セット" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/other.webp" alt="サムネイル7" data-caption="その他" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/other.webp" alt="サムネイル7" data-caption="その他" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                                 <div class="shop-photos__thumbnail">
-                                    <img src="../../../assets/img/soba.webp" alt="サムネイル8" data-caption="そば" onclick="changeMainImage(this.src, this.dataset.caption)">
+                                    <img src="../../assets/img/soba.webp" alt="サムネイル8" data-caption="そば" onclick="changeMainImage(this.src, this.dataset.caption)">
                                 </div>
                             </div>
                             <button class="nav-button next" onclick="navigateImage('next')">
@@ -128,7 +135,7 @@
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore sequi nobis architecto ipsum ratione voluptate nisi! Dicta rerum vitae tenetur in dolorem saepe quia cupiditate reprehenderit, enim necessitatibus amet voluptatibus.
                         </p>
                     </div>
-                    <img src="../../../assets/img/sawayaka.webp" alt="サムネイル1" class="recomend__container__text__image">
+                    <img src="../../assets/img/sawayaka.webp" alt="サムネイル1" class="recomend__container__text__image">
                 </div>
             </div>
 
@@ -236,18 +243,18 @@
             <span>前に戻る</span>
         </button>
 
-        <script src="../../../assets/JS/backbotton.js"></script>
+        <script src="../../assets/JS/backbotton.js"></script>
     </div>
 
     <footer class="footer-2">
-            <a href="../../../index.html">
-                <img src="../../../assets/img/icon.png" alt="logo" width="100px">
+            <a href="../../index.html">
+                <img src="../../assets/img/icon.png" alt="logo" width="100px">
             </a>
             <div class="footer-2__right">
                 <nav>
                     <ul class="footer-2__list">
                         <li>
-                            <a href="../../../alert.html">
+                            <a href="../../alert.html">
                                 <svg class="footer-2__sns-icon footer-2__sns-icon--twitter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path fill="black" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                                 </svg>
@@ -276,7 +283,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="../assets/js/breadcrumb.js"></script>
-        <script src="../assets/js/gallery.js"></script>
+        <script src="./assets/js/breadcrumb.js"></script>
+        <script src="./assets/js/gallery.js"></script>
 </body>
 </html>
