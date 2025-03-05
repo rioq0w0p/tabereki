@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     restaurantContainer.insertAdjacentElement("beforebegin", prefectureSelect); // フィルタを上部に追加
 
     // `stores.json` のパスを動的に設定
-    const jsonPath = window.location.pathname.includes("/region/") ? "../../../assets/json/stores.json" : "stores.json";
+    // const jsonPath = window.location.pathname.includes("/region/") ? "../../../assets/json/stores.json" : "stores.json";
+    const jsonPath = "/tabereki/assets/json/stores.json";
 
     try {
         // JSONから店舗ページリストを取得

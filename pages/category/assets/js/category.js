@@ -22,7 +22,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     restaurantContainer.insertAdjacentElement("beforebegin", prefectureSelect);
 
     // `stores.json` のパスを動的に設定
-    const jsonPath = window.location.pathname.includes("/category/") ? "../../../assets/json/stores.json" : "stores.json";
+    // const jsonPath = window.location.pathname.includes("/category/") ? "../../../assets/json/stores.json" : "stores.json";
+    const jsonPath = "/tabereki/assets/json/stores.json";
 
     console.log(jsonPath)
     try {
