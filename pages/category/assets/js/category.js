@@ -1,3 +1,33 @@
+// ロード画面を追加
+const loadingSpinner = document.createElement("div");
+loadingSpinner.innerHTML = `
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="fork-spoon"></div>
+        </div>
+        <p class="loading-text">読み込み中...</p>
+    </div>
+`;
+document.body.appendChild(loadingSpinner);
+
+// ロード画面を表示する関数
+function showLoading() {
+    document.getElementById("loading-screen").style.display = "flex";
+}
+
+// ロード画面を非表示にする関数（フェードアウト）
+function hideLoading() {
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.classList.add("fade-out"); // フェードアウトのクラスを追加
+
+    // 完全に消えるまで 1 秒待って display: none にする
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        document.body.classList.add("loaded"); // メインコンテンツを表示
+    }, 1000); // CSSの `transition: all 1s ease-out;` に合わせて 1秒待つ
+}
+
+
 document.addEventListener("DOMContentLoaded", async function () {
     const restaurantContainer = document.querySelector(".category__container");
 
@@ -22,14 +52,14 @@ document.addEventListener("DOMContentLoaded", async function () {
     restaurantContainer.insertAdjacentElement("beforebegin", prefectureSelect);
 
     // `stores.json` のパスを動的に設定
-    // const jsonPath = window.location.pathname.includes("/category/") ? "../../../assets/json/stores.json" : "stores.json";
-    // const jsonPath = "/tabereki/assets/json/stores.json";
-    const isLocal = window.location.pathname.includes("/category/");
+    const isLocal = window.location.origin.includes("localhost") || window.location.origin.includes("127.0.0.1");
     const jsonPath = isLocal ? "../../../assets/json/stores.json" : `${window.location.origin}/tabereki/assets/json/stores.json`;
 
+    console.log(jsonPath);
 
-    console.log(jsonPath)
     try {
+        showLoading();  // 🟢 データ取得前にロード画面を表示
+
         const response = await fetch(jsonPath);
         const storePages = await response.json();
 
@@ -40,11 +70,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         // 各ページの情報を取得
         for (const page of storePages) {
             try {
-                // const pagePath = window.location.pathname.includes("/category/") ? `../${page}` : page;
-                // const pagePath = `${window.location.origin}/tabereki/pages/restaurant/${page}`;
                 const pagePath = isLocal
                     ? `../${page}`
                     : `${window.location.origin}/tabereki/pages/restaurant/${page}`;
+
                 const res = await fetch(pagePath);
                 const text = await res.text();
                 const parser = new DOMParser();
@@ -66,11 +95,13 @@ document.addEventListener("DOMContentLoaded", async function () {
                     areaToPrefectures[area] = new Set();
                 }
                 areaToPrefectures[area].add(prefecture);
-                console.log(pagePath)
+                console.log(pagePath);
             } catch (error) {
                 console.error(`${page} の取得エラー:`, error);
             }
         }
+
+        hideLoading();  // 🔴 データ取得が完了したらロード画面を非表示
 
         console.log("All Stores:", stores);
         console.log("Target Tag:", window.targetTag);
@@ -96,16 +127,13 @@ document.addEventListener("DOMContentLoaded", async function () {
                     .join("");
             }
 
-            // 選択した地方の店舗を表示
             filterStores();
         });
 
-        // 都道府県が選択されたら表示を更新
         prefectureSelect.addEventListener("change", function () {
             filterStores();
         });
 
-        // フィルタリング関数（地方・都道府県・タグ）
         function filterStores() {
             const selectedArea = areaSelect.value;
             const selectedPrefecture = prefectureSelect.value;
@@ -113,17 +141,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             let filteredStores = stores;
 
-            // タグでフィルタリング
             if (targetTag) {
                 filteredStores = filteredStores.filter(store => store.tags.includes(targetTag));
             }
-
-            // 地方でフィルタリング
             if (selectedArea) {
                 filteredStores = filteredStores.filter(store => store.area === selectedArea);
             }
-
-            // 都道府県でフィルタリング
             if (selectedPrefecture) {
                 filteredStores = filteredStores.filter(store => store.prefecture === selectedPrefecture);
             }
@@ -131,33 +154,29 @@ document.addEventListener("DOMContentLoaded", async function () {
             displayStores(filteredStores);
         }
 
-        // 店舗を表示する関数（五十音順）
         function displayStores(filteredStores) {
             rowContainer.innerHTML = "";
             if (filteredStores.length === 0) {
                 rowContainer.innerHTML = `<p class='text-center'>該当する店舗がありません。</p>`;
             } else {
-                filteredStores
-                    .sort((a, b) => a.name.localeCompare(b.name, 'ja'))
-                    .forEach(store => {
-                        const cardHTML = `
-                            <div class="col mb-4">
-                                <a href="${store.url}" class="card-link">
-                                    <div class="card h-100">
-                                        <img src="${store.image}" class="card-img-top" alt="${store.name}">
-                                        <div class="card-body">
-                                            <h5 class="card-title">${store.name}</h5>
-                                        </div>
+                filteredStores.forEach(store => {
+                    rowContainer.innerHTML += `
+                        <div class="col mb-4">
+                            <a href="${store.url}" class="card-link">
+                                <div class="card h-100">
+                                    <img src="${store.image}" class="card-img-top" alt="${store.name}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${store.name}</h5>
                                     </div>
-                                </a>
-                            </div>
-                        `;
-                        rowContainer.innerHTML += cardHTML;
-                    });
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                });
             }
         }
-
     } catch (error) {
+        hideLoading();
         console.error("店舗ページリストの取得エラー:", error);
     }
 });

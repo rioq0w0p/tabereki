@@ -1,3 +1,33 @@
+// ロード画面を追加
+const loadingSpinner = document.createElement("div");
+loadingSpinner.innerHTML = `
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="fork-spoon"></div>
+        </div>
+        <p class="loading-text">読み込み中...</p>
+    </div>
+`;
+document.body.appendChild(loadingSpinner);
+
+// ロード画面を表示する関数
+function showLoading() {
+    document.getElementById("loading-screen").style.display = "flex";
+}
+
+// ロード画面を非表示にする関数（フェードアウト）
+function hideLoading() {
+    const loadingScreen = document.getElementById("loading-screen");
+    loadingScreen.classList.add("fade-out"); // フェードアウトのクラスを追加
+
+    // 完全に消えるまで 1 秒待って display: none にする
+    setTimeout(() => {
+        loadingScreen.style.display = "none";
+        document.body.classList.add("loaded"); // メインコンテンツを表示
+    }, 1000); // CSSの `transition: all 1s ease-out;` に合わせて 1秒待つ
+}
+
+// ロード処理を含めたスクリプト
 document.addEventListener("DOMContentLoaded", async function () {
     const restaurantContainer = document.querySelector(".category__container");
 
@@ -15,14 +45,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     restaurantContainer.insertAdjacentElement("beforebegin", prefectureSelect); // フィルタを上部に追加
 
     // `stores.json` のパスを動的に設定
-    // const jsonPath = window.location.pathname.includes("/region/") ? "../../../assets/json/stores.json" : "stores.json";
-    // const jsonPath = "/tabereki/assets/json/stores.json";
-    const isLocal = window.location.pathname.includes("/region/");
+    const isLocal = window.location.origin.includes("localhost") || window.location.origin.includes("127.0.0.1");
     const jsonPath = isLocal ? "../../../assets/json/stores.json" : `${window.location.origin}/tabereki/assets/json/stores.json`;
 
     try {
+        showLoading(); // 🟢 データ取得前にロード画面を表示
+
         // JSONから店舗ページリストを取得
         const response = await fetch(jsonPath);
+        if (!response.ok) throw new Error(`Failed to load JSON: ${response.status}`);
         const storePages = await response.json();
 
         const stores = [];
@@ -31,12 +62,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         // 各ページの情報を取得
         for (const page of storePages) {
             try {
-                // const pagePath = window.location.pathname.includes("/region/") ? `../${page}` : page;
-                // const pagePath = `${window.location.origin}/tabereki/pages/restaurant/${page}`;
                 const pagePath = isLocal
                     ? `../${page}`
                     : `${window.location.origin}/tabereki/pages/restaurant/${page}`;
+
                 const res = await fetch(pagePath);
+                if (!res.ok) throw new Error(`Failed to fetch ${pagePath}: ${res.status}`);
                 const text = await res.text();
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(text, "text/html");
@@ -58,6 +89,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 console.error(`${page} の取得エラー:`, error);
             }
         }
+
+        hideLoading(); // 🔴 データ取得が完了したらロード画面を非表示
 
         console.log("All Stores:", stores);
         console.log(`All Prefectures (${window.targetArea}):`, [...allPrefectures]);
@@ -111,6 +144,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
 
     } catch (error) {
+        hideLoading(); // ❌ エラー時にもロード画面を非表示にする
         console.error("店舗ページリストの取得エラー:", error);
     }
 });
