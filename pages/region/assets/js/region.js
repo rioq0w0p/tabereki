@@ -1,4 +1,4 @@
-// ロード処理を含めたスクリプト
+// 処理を含めたスクリプト
 document.addEventListener("DOMContentLoaded", async function () {
     const restaurantContainer = document.querySelector(".category__container");
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const jsonPath = isLocal ? "../../../assets/json/stores.json" : `${window.location.origin}/tabereki/assets/json/stores.json`;
 
     try {
-        showLoading(); // 🟢 データ取得前にロード画面を表示
+        
 
         // JSONから店舗ページリストを取得
         const response = await fetch(jsonPath);
@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         }
 
-        hideLoading(); // 🔴 データ取得が完了したらロード画面を非表示
 
         console.log("All Stores:", stores);
         console.log(`All Prefectures (${window.targetArea}):`, [...allPrefectures]);
@@ -115,7 +114,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
 
     } catch (error) {
-        hideLoading(); // ❌ エラー時にもロード画面を非表示にする
         console.error("店舗ページリストの取得エラー:", error);
     }
 });

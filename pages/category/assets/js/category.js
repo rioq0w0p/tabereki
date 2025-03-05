@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log(jsonPath);
 
     try {
-        showLoading();  // 🟢 データ取得前にロード画面を表示
 
         const response = await fetch(jsonPath);
         const storePages = await response.json();
@@ -70,8 +69,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 console.error(`${page} の取得エラー:`, error);
             }
         }
-
-        hideLoading();  // 🔴 データ取得が完了したらロード画面を非表示
 
         console.log("All Stores:", stores);
         console.log("Target Tag:", window.targetTag);
@@ -146,7 +143,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             }
         }
     } catch (error) {
-        hideLoading();
         console.error("店舗ページリストの取得エラー:", error);
     }
 });
