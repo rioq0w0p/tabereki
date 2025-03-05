@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // `stores.json` のパスを動的に設定
     // const jsonPath = window.location.pathname.includes("/region/") ? "../../../assets/json/stores.json" : "stores.json";
-    const jsonPath = "/tabereki/assets/json/stores.json";
+    // const jsonPath = "/tabereki/assets/json/stores.json";
+    const isLocal = window.location.pathname.includes("/region/");
+    const jsonPath = isLocal ? "../../../assets/json/stores.json" : `${window.location.origin}/tabereki/assets/json/stores.json`;
 
     try {
         // JSONから店舗ページリストを取得
@@ -30,7 +32,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         for (const page of storePages) {
             try {
                 // const pagePath = window.location.pathname.includes("/region/") ? `../${page}` : page;
-                const pagePath = `${window.location.origin}/tabereki/pages/restaurant/${page}`;
+                // const pagePath = `${window.location.origin}/tabereki/pages/restaurant/${page}`;
+                const pagePath = isLocal
+                    ? `../${page}`
+                    : `${window.location.origin}/tabereki/pages/restaurant/${page}`;
                 const res = await fetch(pagePath);
                 const text = await res.text();
                 const parser = new DOMParser();
