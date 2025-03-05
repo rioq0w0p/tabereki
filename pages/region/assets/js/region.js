@@ -1,32 +1,3 @@
-// ロード画面を追加
-const loadingSpinner = document.createElement("div");
-loadingSpinner.innerHTML = `
-    <div id="loading-screen">
-        <div class="loader">
-            <div class="fork-spoon"></div>
-        </div>
-        <p class="loading-text">読み込み中...</p>
-    </div>
-`;
-document.body.appendChild(loadingSpinner);
-
-// ロード画面を表示する関数
-function showLoading() {
-    document.getElementById("loading-screen").style.display = "flex";
-}
-
-// ロード画面を非表示にする関数（フェードアウト）
-function hideLoading() {
-    const loadingScreen = document.getElementById("loading-screen");
-    loadingScreen.classList.add("fade-out"); // フェードアウトのクラスを追加
-
-    // 完全に消えるまで 1 秒待って display: none にする
-    setTimeout(() => {
-        loadingScreen.style.display = "none";
-        document.body.classList.add("loaded"); // メインコンテンツを表示
-    }, 1000); // CSSの `transition: all 1s ease-out;` に合わせて 1秒待つ
-}
-
 // ロード処理を含めたスクリプト
 document.addEventListener("DOMContentLoaded", async function () {
     const restaurantContainer = document.querySelector(".category__container");
