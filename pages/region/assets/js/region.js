@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         // 各ページの情報を取得
         for (const page of storePages) {
             try {
-                const pagePath = window.location.pathname.includes("/region/") ? `../${page}` : page;
+                // const pagePath = window.location.pathname.includes("/region/") ? `../${page}` : page;
+                const pagePath = `${window.location.origin}/tabereki/pages/restaurant/${page}`;
                 const res = await fetch(pagePath);
                 const text = await res.text();
                 const parser = new DOMParser();
